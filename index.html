@@ -102,9 +102,23 @@
   <body
     class="bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 h-full"
   >
+    <script>
+      window.onerror = function (msg, url, line, col, err) {
+        const box = document.createElement("pre");
+        box.style.cssText =
+          "white-space:pre-wrap; background:#fee; color:#900; padding:12px; border:1px solid #f99; border-radius:8px; margin:8px; font-family:ui-monospace, SFMono-Regular, Menlo, monospace;";
+        box.textContent =
+          "Error: " +
+          msg +
+          "\n" +
+          (err && err.stack ? err.stack : url + ":" + line + ":" + col);
+        document.body.insertBefore(box, document.body.firstChild);
+      };
+    </script>
+
     <div id="root" class="h-full"></div>
 
-    <script type="text/babel">
+    <script type="text/babel" data-presets="env,react">
       const { useEffect, useMemo, useState, useRef } = React;
       const {
         BarChart,

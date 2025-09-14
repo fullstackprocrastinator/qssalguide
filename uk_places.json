@@ -1,0 +1,7 @@
+{
+  "counties": {
+    "Greater London": ["London", "Croydon", "Harrow", "Romford"],
+    "West Midlands": ["Birmingham", "Wolverhampton", "Coventry"],
+    "Greater Manchester": ["Manchester", "Salford", "Stockport"]
+  }
+}
